@@ -23,6 +23,12 @@ class Colormap():
         self.number_of_patches = number_of_patches
         self.generate()
 
+    def __call__(self, value):
+        if self.colormap is None:
+            self.generate()
+
+        return self.colormap(value)
+
     def generate(self):
         self.colormap = LinearSegmentedColormap.from_list(
             self.name,
