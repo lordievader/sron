@@ -37,7 +37,7 @@ class Colormap():
 
 
 class BrightColormap(Colormap):
-    def __init__(self, number_of_patches):
+    def __init__(self, number_of_patches, grey=True):
         self.number_of_patches = number_of_patches
         self.colorscheme = [
             '#4477AA',  # blue
@@ -46,13 +46,15 @@ class BrightColormap(Colormap):
             '#CCBB44',  # yellow
             '#EE6677',  # red
             '#AA3377',  # purple
-            '#BBBBBB',  # grey
         ]
+        if grey is True:
+            self.colorscheme.append('#BBBBBB')  # grey
+
         self.generate()
 
 
 class VibrantColormap(Colormap):
-    def __init__(self, number_of_patches):
+    def __init__(self, number_of_patches, grey=True):
         self.number_of_patches = number_of_patches
         self.colorscheme = [
             '#0077BB',  # blue
@@ -61,13 +63,15 @@ class VibrantColormap(Colormap):
             '#EE7733',  # orange
             '#CC3311',  # red
             '#EE3377',  # magenta
-            '#BBBBBB',  # grey
         ]
+        if grey is True:
+            self.colorscheme.append('#BBBBBB')  # grey
+
         self.generate()
 
 
 class MutedColormap(Colormap):
-    def __init__(self, number_of_patches):
+    def __init__(self, number_of_patches, grey=True):
         self.number_of_patches = number_of_patches
         self.colorscheme = [
             '#332288',  # indigo
@@ -79,6 +83,8 @@ class MutedColormap(Colormap):
             '#CC6677',  # rose
             '#882255',  # wine
             '#AA4499',  # purple
-            '#DDDDDD',  # pale grey
         ]
+        if grey is True:
+            self.colorscheme.append('#DDDDDD')  # pale grey
+
         self.generate()
