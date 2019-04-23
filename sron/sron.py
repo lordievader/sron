@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Colormaps based on https://personal.sron.nl/~pault/
 """
-from matplotlib.colors import import LinearSegmentedColormap
+from matplotlib.colors import LinearSegmentedColormap
 
 
 class Colormap():
@@ -27,7 +27,7 @@ class Colormap():
         self.colormap = LinearSegmentedColormap.from_list(
             self.name,
             self.colorscheme,
-            N=number_of_patches)
+            N=self.number_of_patches)
 
 
 class BrightColormap(Colormap):
